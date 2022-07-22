@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using UnityEditor;
 using UnityEngine;
 
@@ -104,6 +104,7 @@ namespace BK.HierarchyHeader.Editor
             serializedObject.Update();
 
             var titleProperty = serializedObject.FindProperty("title");
+
             EditorGUI.BeginChangeCheck();
             EditorGUILayout.PropertyField(titleProperty);
             if (EditorGUI.EndChangeCheck())
@@ -141,7 +142,33 @@ namespace BK.HierarchyHeader.Editor
             GUILayout.FlexibleSpace();
             EditorGUILayout.EndHorizontal();
 
+            GUILayout.Space(20);
+
+            EditorGUILayout.LabelField("Child Controls", EditorStyles.boldLabel);
+
+            DrawUILine(Color.black);
+
+            if (GUILayout.Button("Invert Active"))
+            {
+                GameObject obj = Selection.activeGameObject;
+                foreach (Transform t in obj.transform)
+                {
+                    t.gameObject.SetActive(!t.gameObject.activeSelf);
+                }
+            }
+            DrawUILine(Color.black);
+
             serializedObject.ApplyModifiedProperties();
+        }
+
+        private void DrawUILine(Color color, int thickness = 2, int padding = 10)
+        {
+            Rect r = EditorGUILayout.GetControlRect(GUILayout.Height(padding + thickness));
+            r.height = thickness;
+            r.y += padding / 2;
+            r.x -= 2;
+            r.width += 6;
+            EditorGUI.DrawRect(r, color);
         }
     }
 }
