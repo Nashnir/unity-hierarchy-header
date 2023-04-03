@@ -12,13 +12,11 @@ Text based simple hierarchy header, no fancy magic, just works
 
 ## Install
 ```
-https://github.com/BennyKok/unity-hierarchy-header.git
+https://github.com/alexknutson/unity-hierarchy-header.git
 ```
 
-For details, please check out this [blog post](https://blog.bennykok.com/posts/simple-and-clean-header-separator-in-hierarchy).
 
-## Explore
-Feel free to check me out!! :)
-
+## Original Author
+[blog post](https://blog.bennykok.com/posts/simple-and-clean-header-separator-in-hierarchy).
 [Twitter](https://twitter.com/BennyKokMusic) | [Website](https://bennykok.com) | [AssetStore](https://assetstore.unity.com/publishers/28510)
 
